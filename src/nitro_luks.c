@@ -40,7 +40,7 @@ void reset_input_mode (void)
 
 int main(int argc, char const *argv[])
 {
-    const char* LUKS_password;
+    const char* N_password;
     char password[MAX_PIN_LENGTH + 1];
     uint8_t* slots;
     int login_status;
@@ -116,7 +116,7 @@ int main(int argc, char const *argv[])
         if (slots[slot] == 1)
         {
             const char* slotname = NK_get_password_safe_slot_name(slot);
-            if(strcmp(slotname, "LUKS") == 0)
+            if(strcmp(slotname, "RPI") == 0)
                 slot_number = slot;
         } 
         else 
